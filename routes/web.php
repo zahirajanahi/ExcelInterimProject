@@ -4,6 +4,7 @@ use App\Http\Controllers\AddOffresController;
 use App\Http\Controllers\CandidatureUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobOffersController;
+use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\PostuleUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -23,7 +24,7 @@ Route::get('/conseil', [HomeController::class, 'conseil'])->name('conseil');
 Route::get('/nosvaleur', [HomeController::class, 'nosvaleur'])->name('nosvaleur');
 Route::get('/nosoffers', [JobOffersController::class, 'index'])->name('nosvaleur');
 Route::get('/offres-emploi/{jobOffer}', [JobOffersController::class, 'publicShow'])->name('job-offers.public.show');
-
+Route::get('locale/{lang}', [LocaleController::class, 'setLocale']);
 
 
 Route::middleware(['auth', 'verified'])->group(function () {

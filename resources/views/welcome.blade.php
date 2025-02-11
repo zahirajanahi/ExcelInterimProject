@@ -1233,34 +1233,30 @@
                     </a>
                     <ul
                         class="dropdown-menu absolute left-0 mt-4 w-[20vw] bg-white  shadow-lg rounded-md py-2 opacity-0 invisible transition-all ease-in-out duration-300 transform scale-95 group-hover:opacity-100 group-hover:visible group-hover:scale-100">
-                        <li><a href="{{ url('/mdd') }}" class="block px-4 py-2 text-black hover:bg-gray-100">Mot du
-                                directeur</a></li>
-                        <li><a href="{{ url('/qsn') }}" class="block px-4 py-2 text-black hover:bg-gray-100">Qui
-                                sommes-nous</a></li>
-                        <li><a href="{{ url('/nosvaleur') }}" class="block px-4 py-2 text-black hover:bg-gray-100">Nos
-                                valeurs</a></li>
+                        <li><a href="{{ url('/mdd') }}" class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Mot du directeur")</a></li>
+                        <li><a href="{{ url('/qsn') }}" class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Qui sommes-nous")</a></li>
+                        <li><a href="{{ url('/nosvaleur') }}" class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Nos valeurs")</a></li>
                     </ul>
                 </li>
                 <li class="relative group">
                     <a href="{{ url('/travailT') }}"
                         class="dropdown-btn text-gray-800 font-semibold hover:text-[#c01c2e] hover:bg-zinc-300 transition duration-700 px-4 py-2 rounded-3xl">
-                        Nos services
+                        @lang("messages.Nos services")
                     </a>
                     <ul
                         class="dropdown-menu absolute left-0 mt-4 w-[20vw] bg-white shadow-lg rounded-md py-2 opacity-0 invisible transition-all ease-in-out duration-300 transform scale-95 group-hover:opacity-100 group-hover:visible group-hover:scale-100">
                         <li><a href="{{ url('/travailT') }}"
-                                class="block px-4 py-2 text-black hover:bg-gray-100">Travail temporaire</a></li>
+                                class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Travail temporaire")</a></li>
                         <li><a href="{{ url('/interim') }}"
-                                class="block px-4 py-2 text-black hover:bg-gray-100">Recrutement</a></li>
+                                class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Recrutement")</a></li>
                         <li><a href="{{ url('/conseil') }}"
-                                class="block px-4 py-2 text-black hover:bg-gray-100">Conseil RH</a></li>
+                                class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Conseil RH")</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ url('/nosoffers') }}"
-                        class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">Offres
-                        d'emploi</a></li>
+                        class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">@lang("messages.Offres d'emploi")</a></li>
                 <li><a href="{{ url('/candidature') }}"
-                        class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">Candidature</a>
+                        class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">@lang("messages.Candidature")</a>
                 </li>
                 {{-- <li><a href="{{ url('/contact') }}" class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">@lang("messages.Contact")</a></li> --}}
                 @auth
@@ -1320,9 +1316,9 @@
                 <ul
                     class="dropdown-menu absolute right-0 mt-2 w-[8vw] bg-white shadow-lg rounded-md py-2 opacity-0 invisible transition-all ease-in-out duration-300 transform scale-95">
                     <li><a href="{{ url('locale/en') }}"
-                            class="block px-4 py-2 hover:bg-gray-100 text-gray-600">Anglais</a></li>
+                            class="block px-4 py-2 hover:bg-gray-100 text-gray-600">@lang('messages.Anglais')</a></li>
                     <li><a href="{{ url('locale/fr') }}"
-                            class="block px-4 py-2 hover:bg-gray-100  text-gray-600">Français</a></li>
+                            class="block px-4 py-2 hover:bg-gray-100  text-gray-600">@lang("messages.Français")</a></li>
                 </ul>
             </div>
         </div>
@@ -1339,14 +1335,12 @@
                         <div class="relative w-full h-[100vh]">
                             <img src="{{ asset('storage/images/pixelcut-export.jpeg') }}"
                                 class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/40"></div>
+                            <div class="absolute inset-0 bg-black/50"></div>
                             <div class="absolute top-1/3 w-full text-center text-white animate-fadeInUp">
-                                <h1 class="text-4xl font-bold ">Recrutement.</h1>
-                                <p class="mt-3 text-2xl text-gray-200">Nous facilitons votre embauche et trouvons le
-                                    meilleur candidat</p>
+                                <h1 class="text-4xl font-bold  ">@lang("messages.RECRUTEMENT") <span class="text-[#c01c2e] text-5xl">.</span></h1>
+                                <p class="mt-3 text-2xl text-gray-200">@lang("messages.Nous facilitons votre embauche et trouvons le meilleur candidat")</p>
                                 <button
-                                    class=" rounded-lg px-4 py-2 text-lg mt-8 transition duration-700 bg-[#c01c2e]">Lire
-                                    Plus</button>
+                                    class=" rounded-lg px-4 py-2 text-lg mt-8 transition duration-700 bg-[#c01c2e] text-5xl">@lang("messages.Lire Plus")</button>
                                 {{-- <button class="cta flex items-center">
                                                     <span class="pt-3">Hover me</span>
                                                     <svg width="15px" height="10px"  viewBox="0 0 13 10">
@@ -1358,19 +1352,16 @@
                         </div>
                     </li>
                     <li class="splide__slide relative">
-
+                         
                         <div class="relative w-full h-[100vh]">
                             <img src="{{ asset('storage/images/pixelcut-export (2).jpeg') }}"
                                 class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/40"></div>
+                            <div class="absolute inset-0 bg-black/50"></div>
                             <div class="absolute top-1/3 w-full text-center text-white animate-fadeInUp">
-                                <h1 class="text-4xl font-bold ">Conseil en Organisation RH</h1>
-                                <p class="mt-3 text-xl text-gray-200">Votre partenaire Ressources Humaines.
-                                    Nous disposons d'une grande expérience <br> dans le conseil et l'organisation des
-                                    ressources humaines.</p>
+                                <h1 class="text-4xl font-bold ">@lang("messages.Conseil en Organisation RH")<span class="text-[#c01c2e] text-5xl">.</span></h1>
+                                <p class="mt-3 text-xl text-gray-200">@lang("messages.Votre partenaire Ressources Humaines. Nous disposons d'une grande expérience dans le conseil et l'organisation des ressources humaines.")</p>
                                 <button
-                                    class=" rounded-lg px-4 py-2 text-lg mt-8 transition duration-700 bg-[#c01c2e]">Lire
-                                    Plus</button>
+                                    class=" rounded-lg px-4 py-2 text-lg mt-8 transition duration-700 bg-[#c01c2e]">@lang("messages.Lire Plus")</button>
                                 {{-- <button class="cta flex items-center">
                                                     <span class="pt-3">Hover me</span>
                                                     <svg width="15px" height="10px"  viewBox="0 0 13 10">
@@ -1385,15 +1376,14 @@
                         <div class="relative w-full h-[100vh]">
                             <img src="{{ asset('storage/images/pixelcut-export (5).jpeg') }}"
                                 class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/40"></div>
+                            <div class="absolute inset-0 bg-black/20"></div>
                             <div class="absolute top-1/3 w-full text-center text-white animate-fadeInUp">
-                                <h1 class="text-4xl font-bold ">Travail Temporaire</h1>
+                                <h1 class="text-4xl font-bold ">@lang("messages.Travail temporaire") <span class="text-[#c01c2e] text-5xl">.</span></h1>
                                 <p class="mt-3 text-xl text-gray-200">Contrats Flexibles,
                                     Nous avons développé au fil des années un savoir-faire <br> et des solutions
                                     adaptées aux besoins de nos clients en Travail Temporaire</p>
                                 <button
-                                    class=" rounded-lg px-4 py-2 text-lg mt-8 transition duration-700 bg-[#c01c2e]">Lire
-                                    Plus</button>
+                                    class=" rounded-lg px-4 py-2 text-lg mt-8 transition duration-700 bg-[#c01c2e]">@lang('messages.Lire Plus')</button>
                                 {{-- <button class="cta flex items-center">
                                                     <span class="pt-3">Hover me</span>
                                                     <svg width="15px" height="10px"  viewBox="0 0 13 10">
@@ -1413,12 +1403,10 @@
     <section>
         <div class="flex center-items justify-center space-x-20 mt-20 ">
             <div class="pt-40 ">
-                <h1 class="text-4xl font-bold text-[#c01c2e] ">TRAVAIL TEMPORAIRE</h1>
-                <p class="text-xl text-gray-800 pt-5 w-[40vw] ">Nous avons développé au fil des années un savoir-faire
-                    et des solutions adaptées aux besoins de nos clients en <br> Travail Temporaire.</p>
+                <h1 class="text-4xl font-bold text-[#c01c2e] ">@lang("messages.Travail temporaire")</h1>
+                <p class="text-xl text-gray-800 pt-5 w-[40vw] ">@lang("messages.Nous avons développé au fil des années un savoir-faire et des solutions adaptées aux besoins de nos clients en Travail Temporaire.")</p>
                 <button
-                    class="text-blue-950 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">Lire
-                    plus</button>
+                    class="text-blue-950 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">@lang("messages.Lire Plus")</button>
             </div>
             <div>
                 <img src="{{ asset('storage/images/Your paragraph text (1).png') }}"
@@ -1432,25 +1420,19 @@
                     class="w-[40vw] rounded-3xl h-[80vh] object-cover">
             </div>
             <div class="pt-36 ">
-                <h1 class="text-4xl font-bold text-[#c01c2e]">RECRUTEMENT</h1>
-                <p class="text-xl text-gray-800 pt-4 w-[40vw]">Nous sommes conscients des enjeux forts du recrutement,
-                    et nous engageons notre expérience et nos outils éprouvés pour garantir la meilleure adéquation
-                    poste/profil dans les meilleurs délais.</p>
+                <h1 class="text-4xl font-bold text-[#c01c2e]">@lang("messages.RECRUTEMENT")</h1>
+                <p class="text-xl text-gray-800 pt-4 w-[40vw]">@lang("messages.Nous sommes conscients des enjeux forts du recrutement, et nous engageons notre expérience et nos outils éprouvés pour garantir la meilleure adéquation poste/profil dans les meilleurs délais.")</p>
                 <button
-                    class="text-blue-950 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">Lire
-                    plus</button>
+                    class="text-blue-950 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">@lang("messages.Lire Plus")</button>
             </div>
         </div>
 
         <div class="flex center-items justify-center space-x-20 mt-10">
             <div class="pt-48 ">
-                <h1 class="text-4xl font-bold text-[#c01c2e]">CONSEIL RH</h1>
-                <p class="text-xl text-gray-800 pt-5 w-[40vw]">Nous disposons d'une grande expérience dans le conseil
-                    et l’organisation des ressources humaines. Nos missions de conseil et d’accompagnement procurent une
-                    valeur ajoutée distincte à toutes nos entreprises partenaires.</p>
+                <h1 class="text-4xl font-bold text-[#c01c2e]">@lang("messages.Conseil RH")</h1>
+                <p class="text-xl text-gray-800 pt-5 w-[40vw]">@lang("messages.Nous disposons d'une grande expérience dans le conseil et l’organisation des ressources humaines. Nos missions de conseil et d’accompagnement procurent une valeur ajoutée distincte à toutes nos entreprises partenaires.")</p>
                 <button
-                    class="text-blue-950 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">Lire
-                    plus</button>
+                    class="text-blue-950 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">@lang("messages.Lire Plus")</button>
             </div>
             <div>
                 <img src="{{ asset('storage/images/Your paragraph text.png') }}"
@@ -1466,7 +1448,7 @@
 
     {{-- section services --}}
     <section class="splide ms-5 mt-32 " id="secteurs-carousel">
-        <h1 class="text-gray-800 border-l-4 border-[#c01c2e] ps-4 text-4xl font-bold ">Nos Secteurs D'activité</h1>
+        <h1 class="text-gray-800 border-l-4 border-[#c01c2e] ps-4 text-4xl font-bold ">@lang("messages.Nos Secteurs D'activité")</h1>
         <div class="splide__track mt-10">
             <ul class="splide__list">
                 @php
@@ -1496,12 +1478,11 @@
     </section>
 
     <section class="bg-zinc-500/10 py-20 mt-14">
-        <h2 class="text-gray-800 border-l-4 border-[#c01c2e] ps-4 text-4xl font-bold ms-5 "> Excel Interim en chiffres
+        <h2 class="text-gray-800 border-l-4 border-[#c01c2e] ps-4 text-4xl font-bold ms-5 "> @lang("messages.Excel Interim en chiffres")
         </h2>
 
         <div class="container mx-auto text-center">
-            <p class="pt-4 text-zinc-600 text-xl "> " Notre philosophie, en se matérialisant à travers des services et
-                des avantages concrets pour nos clients et nos ressources, est devenue une véritable force "</p>
+            <p class="pt-4 text-zinc-600 text-xl "> " @lang("messages.Notre philosophie, en se matérialisant à travers des services et des avantages concrets pour nos clients et nos ressources, est devenue une véritable force") "</p>
             <div class="flex justify-center space-x-36 mt-10">
                 <div>
                     <div class="flex items-center space-x-3">
@@ -1509,7 +1490,7 @@
                         <h3 class="text-4xl font-semibold text-zinc-800"><span class="counter"
                                 data-target="40">0</span>+</h3>
                     </div>
-                    <p class="text-lg text-gray-700 font-semibold pt-1 ">Clients</p>
+                    <p class="text-lg text-gray-700 font-semibold pt-1 ">@lang("messages.Clients")</p>
                 </div>
                 <div>
                     <div class="flex items-center space-x-3">
@@ -1517,7 +1498,7 @@
                         <h3 class="text-4xl font-semibold text-zinc-800"><span class="counter"
                                 data-target="1440">0</span>+</h3>
                     </div>
-                    <p class="text-lg text-gray-700 font-semibold  pt-1 ">Recrutement</p>
+                    <p class="text-lg text-gray-700 font-semibold  pt-1 ">@lang("messages.Recrutement")</p>
                 </div>
                 <div>
                     <div class="flex items-center space-x-3">
@@ -1525,7 +1506,7 @@
                         <h3 class="text-4xl font-semibold text-zinc-800"><span class="counter"
                                 data-target="60">0</span>+</h3>
                     </div>
-                    <p class="text-lg text-gray-700 font-semibold  pt-1 ">Collaborateurs</p>
+                    <p class="text-lg text-gray-700 font-semibold  pt-1 ">@lang("messages.Collaborateurs")</p>
                 </div>
                 <div>
                     <div class="flex items-center space-x-3">
@@ -1533,7 +1514,7 @@
                         <h3 class="text-4xl font-semibold text-zinc-800"><span class="counter"
                                 data-target="1600">0</span>+</h3>
                     </div>
-                    <p class="text-lg text-gray-700 font-semibold  pt-1 ">Eumbauchés</p>
+                    <p class="text-lg text-gray-700 font-semibold  pt-1 ">@lang("messages.Eumbauchés")</p>
                 </div>
             </div>
         </div>
@@ -1566,7 +1547,7 @@
 
 
     <section class="py-12">
-        <h1 class="text-center text-4xl text-[#c01c2e] font-bold ">CONSEIL RH</h1>
+        <h1 class="text-center text-4xl text-[#c01c2e] font-bold ">@lang("messages.Conseil RH")</h1>
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
                 <!-- Card 1 -->
@@ -1581,11 +1562,8 @@
                     <img src="{{ asset('storage/images/AsouoSznYmZHtDK88ABlzeUU.webp') }}" alt="Recruitment Image"
                         class="w-full h-[40vh] object-cover">
                     <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2">Innovations RH </h3>
-                        <p class="text-gray-600">Innovations RH et managériales de Barabel, Loeuilleux et Meier dévoile
-                            des horizons audacieux pour les DRH, combinant technologies, agilité et intelligence
-                            collective. Une invitation inspirante à repenser la gestion des ressources humaines et du
-                            management..</p>
+                        <h3 class="font-bold text-lg mb-2">@lang("messages.Innovations RH") </h3>
+                        <p class="text-gray-600">@lang("messages.Innovations RH et managériales de Barabel, Loeuilleux et Meier dévoile des horizons audacieux pour les DRH, combinant technologies, agilité et intelligence collective. Une invitation inspirante à repenser la gestion des ressources humaines et du management.")</p>
                     </div>
                 </div>
 
@@ -1601,12 +1579,8 @@
                     <img src="{{ asset('storage/images/1705579121745.jpg ') }}" alt="AI Image"
                         class="w-full h-[40vh] object-cover">
                     <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2">IA : Fini le chaos des absences ?</h3>
-                        <p class="text-gray-600">Qu'elles soient imprévues ou même planifiées, les absences
-                            représentent, au sein de toute entreprise, de grands obstacles qui compliquent la gestion
-                            quotidienne des plannings de travail, ce qui peut engendrer une baisse de la productivité.
-                            De nos jours, plusieurs solutions digitales ont fait leur apparence pour aider a mieux gérer
-                            les absences des collaborateurs</p>
+                        <h3 class="font-bold text-lg mb-2">@lang("messages.IA : Fini le chaos des absences ?")</h3>
+                        <p class="text-gray-600">@lang("messages.Qu'elles soient imprévues ou même planifiées, les absences représentent, au sein de toute entreprise, de grands obstacles qui compliquent la gestion quotidienne des plannings de travail, ce qui peut engendrer une baisse de la productivité. De nos jours, plusieurs solutions digitales ont fait leur apparence pour aider à mieux gérer les absences des collaborateurs.")</p>
                     </div>
                 </div>
 
@@ -1622,10 +1596,8 @@
                     <img src="{{ asset('storage/images/1673356776302.jpg') }}" alt="HR Strategy Image"
                         class="w-full h-[40vh] object-cover">
                     <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2">Stratégie RH : Êtes-vous un RH du futur ?</h3>
-                        <p class="text-gray-600">Au cours de ces dernières années, la fonction RH a profondément
-                            évolué.
-                            Passant de la simple gestion administrative à une fonction centrale des entreprises.</p>
+                        <h3 class="font-bold text-lg mb-2">@lang("messages.Stratégie RH : Êtes-vous un RH du futur ?")</h3>
+                        <p class="text-gray-600">@lang("messages.Au cours de ces dernières années, la fonction RH a profondément évolué. Passant de la simple gestion administrative à une fonction centrale des entreprises.")</p>
                     </div>
                 </div>
             </div>

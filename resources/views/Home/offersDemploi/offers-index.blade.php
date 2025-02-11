@@ -8,15 +8,16 @@
 
     <div class="flex flex-col items-center text-center py-16 px-4 mt-24">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
-            Find your 
-            <span class="border-b-4 border-red-800 px-2 pb-1">dream jobs</span> 
-            in <span class="text-gray-800">New Castle</span>
+            Trouvez 
+            <span class="border-b-4 border-red-800 px-2 pb-1"> l'emploi de vos rêves</span> 
+            in <span class="text-gray-800"> à Excel Interim</span>
         </h1>
         <p class="text-gray-600 text-lg mt-5 max-w-xl">
             When you're searching for a job, there are a few things you can do 
             to get the most out of your search.
         </p>
         
+      
         <div class="mt-6 w-full max-w-2xl relative">
             <input type="text" placeholder="Job title or keyword" 
                 class="w-full py-3 pl-12 pr-4 text-gray-800 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">

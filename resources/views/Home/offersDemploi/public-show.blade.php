@@ -8,7 +8,7 @@
 
     <div class="container mx-auto px-4 py-8 mt-32 bg-gray-400/10 rounded-2xl">
         <div class="  overflow-hidden">
-            <a href="{{ url('/offres-demploi') }}" class="font-semibold text-[#c01c2e] flex gap-4"> <i class="bi bi-arrow-left text-lg"></i> offres d'emploi</a>
+            <a href="{{ url('/nosoffers') }}" class="font-semibold text-[#c01c2e] flex gap-4"> <i class="bi bi-arrow-left text-lg"></i> offres d'emploi</a>
             <div class="p-8">
                 <h1 class="text-3xl font-bold text-gray-800 mb-6">{{ $jobOffer->title }}</h1>
     

@@ -55,7 +55,7 @@
     <div class="p-6">
         <h2 class="text-2xl font-semibold mb-6">Candidatures reçues</h2>
         
-        <div class=" bg-white rounded-lg shadow">
+        <div class="bg-white overflow-x-auto rounded-lg shadow">
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
                     <tr>
