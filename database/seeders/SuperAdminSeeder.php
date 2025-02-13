@@ -17,7 +17,7 @@ class SuperAdminSeeder extends Seeder
             ['description' => 'Super Administrator with full access']
         );
 
-        // Check if the super admin user already exists
+       
         if (!User::where('email', 'superadmin@example.com')->exists()) {
             User::create([
                 'name' => 'Super Admin',

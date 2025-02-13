@@ -10,7 +10,7 @@
         <ul class="flex space-x-6 items-center">
             <li class="relative group z-50">
                 <button class="dropdown-btn text-black font-semibold hover:text-[#c01c2e] hover:bg-zinc-300  transition duration-700 px-4 py-2 rounded-3xl">
-                    RHS EMPLOI
+                    Excel Interim 
                 </button>
                 <ul class="dropdown-menu absolute left-0 mt-4 w-[20vw] bg-white  shadow-lg rounded-md py-2 opacity-0 invisible transition-all ease-in-out duration-300 transform scale-95 group-hover:opacity-100 group-hover:visible group-hover:scale-100">
                     <li><a href="{{ url('/mdd') }}" class="block px-4 py-2 text-black hover:bg-gray-100">Mot du directeur</a></li>

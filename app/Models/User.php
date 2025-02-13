@@ -34,15 +34,15 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function isSuperAdmin(): bool
-    {
-        return $this->role?->name === 'super_admin';
-    }
-
     public function isAdmin(): bool
-    {
-        return $this->role?->name === 'admin';
-    }
+{
+    return $this->role?->name === 'admin' || $this->role?->name === 'super_admin';
+}
+
+public function isSuperAdmin(): bool
+{
+    return $this->role?->name === 'super_admin';
+}
 
     public function isUser(): bool
     {

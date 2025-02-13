@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Mail;
 
 class JobOffersController extends Controller
 {
-    //
-    public function index(){
+    public function index()
+    {
         $jobOffers = JobOffer::where('is_active', true)
-        ->orderBy('created_at', 'desc')
-        ->paginate(12);
+            ->orderBy('created_at', 'desc')
+            ->paginate(12);
 
         return view("Home.offersDemploi.offers-index", compact('jobOffers'));
     }
@@ -28,11 +28,6 @@ class JobOffersController extends Controller
 
     public function apply(Request $request, JobOffer $jobOffer)
     {
-        if (!auth()->check()) {
-            return redirect()->route('login')
-                ->with('error', 'Veuillez vous connecter pour postuler à cette offre.');
-        }
-
         $validated = $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -48,7 +43,7 @@ class JobOffersController extends Controller
 
         $application = JobApplication::create([
             'job_offer_id' => $jobOffer->id,
-            'user_id' => auth()->id(),
+            'user_id' => auth()->id(), // Will be null for guest users
             'first_name' => $validated['first_name'],
             'last_name' => $validated['last_name'],
             'email' => $validated['email'],
@@ -59,12 +54,11 @@ class JobOffersController extends Controller
             'message' => $validated['message'],
         ]);
 
-        // // Send email to company
-         Mail::to('zahirajanahi71@gmail.com')
+        // Send email to company
+        Mail::to('zahirajanahi71@gmail.com')
             ->send(new JobApplicationSubmitted($application));
 
         return redirect()->back()
             ->with('success', 'Votre candidature a été envoyée avec succès.');
     }
- 
 }

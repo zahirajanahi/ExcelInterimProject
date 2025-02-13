@@ -26,8 +26,8 @@ class RoleSeeder extends Seeder
         
         foreach ($roles as $role) {
             Role::firstOrCreate(
-                ['name' => $role['name']],
-                ['description' => $role['description']]
+                ['name' => 'admin'],
+                ['description' => 'Administrator with dashboard access']
             );
         }
     }

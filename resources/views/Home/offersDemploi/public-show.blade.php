@@ -56,25 +56,29 @@
     <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl p-8 transform transition-all scale-95">
         <h2 class="text-2xl font-bold mb-6">Postuler pour: {{ $jobOffer->title }}</h2>
 
-        @auth
+        
+
         <form action="{{ route('job-offers.apply', $jobOffer) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <!-- Grid with 3 inputs per row -->
             <div class="grid grid-cols-3 gap-6 mb-4">
                 <div>
                     <label class="block text-gray-700 font-semibold mb-2">Prénom</label>
-                    <input type="text" name="first_name" required value="{{ old('first_name', auth()->user()->name) }}"
-                           class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500">
+                    <input type="text" name="first_name" required 
+                        value="{{ auth()->check() ? auth()->user()->name : old('first_name') }}"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500">
                 </div>
                 <div>
                     <label class="block text-gray-700 font-semibold mb-2">Nom</label>
                     <input type="text" name="last_name" required
-                           class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500">
+                        value="{{ old('last_name') }}"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500">
                 </div>
                 <div>
                     <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                    <input type="email" name="email" required value="{{ old('email', auth()->user()->email) }}"
-                           class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500">
+                    <input type="email" name="email" required 
+                        value="{{ auth()->check() ? auth()->user()->email : old('email') }}"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500">
                 </div>
                 <div>
                     <label class="block text-gray-700 font-semibold mb-2">Téléphone</label>
@@ -116,14 +120,14 @@
                 </button>
             </div>
         </form>
-        @else
-        <div class="text-center py-8">
-            <p class="text-gray-600 mb-4">Vous devez être connecté pour postuler à cette offre.</p>
-            <a href="{{ route('login') }}" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold">
-                Se connecter
-            </a>
-        </div>
-        @endauth
+
+        
+
+         
+
+     
+
+
     </div>
 </div>
 
@@ -136,17 +140,13 @@
 
 
     <script>
-        function openApplicationModal() {
-            @auth
-                document.getElementById('applicationModal').classList.remove('hidden');
-            @else
-                window.location.href = "{{ route('register') }}";
-            @endauth
-        }
-    
-        function closeApplicationModal() {
-            document.getElementById('applicationModal').classList.add('hidden');
-        }
+    function openApplicationModal() {
+    document.getElementById('applicationModal').classList.remove('hidden');
+}
+
+function closeApplicationModal() {
+    document.getElementById('applicationModal').classList.add('hidden');
+}
     </script>
      <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -175,4 +175,4 @@
         });
     </script>
 
-@endsection
+@endsection 

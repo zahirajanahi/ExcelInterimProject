@@ -184,6 +184,43 @@
                     </div>
                 </div>
             </div>
+
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-4">Add New Employee</h2>
+                
+                <form action="{{ route('employees.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Name
+                        </label>
+                        <input type="text" name="name" required
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Email
+                        </label>
+                        <input type="email" name="email" required
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Password
+                        </label>
+                        <input type="password" name="password" required
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    
+                    <button type="submit" 
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Add Employee
+                    </button>
+                </form>
+            </div>
+            
     
            <h3 class="text-lg font-semibold p-6 ms-5">User Management</h3> 
             <div class="p-7">
@@ -194,7 +231,6 @@
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
@@ -208,18 +244,7 @@
                                     {{ $user->is_active ? 'Active' : 'Inactive' }}
                                 </span>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                @if(!$user->isSuperAdmin())
-                                <form action="{{ url('/users/{user}/role', $user) }}" method="POST" class="inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <input type="hidden" name="role" value="{{ $user->isAdmin() ? 'user' : 'admin' }}">
-                                    <button type="submit" class="text-sm text-blue-600 hover:text-blue-900">
-                                        {{ $user->isAdmin() ? 'Remove Admin' : 'Make Admin' }}
-                                    </button>
-                                </form>
-                                @endif
-                            </td>
+                            
                         </tr>
                         @endforeach
                     </tbody>
