@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AddOffresController;
+use App\Http\Controllers\candidatureSController;
 use App\Http\Controllers\CandidatureUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobOffersController;
@@ -29,20 +30,37 @@ Route::get('/nosoffers', [JobOffersController::class, 'index'])->name('nosoffers
 Route::get('/offres-emploi/{jobOffer}', [JobOffersController::class, 'publicShow'])->name('job-offers.public.show');
 Route::post('/offres-emploi/{jobOffer}/apply', [JobOffersController::class, 'apply'])->name('job-offers.apply');
 
+//candidature Routes
+Route::get('/candidature-spontane', [candidatureSController::class, 'index'])->name('candidature-spontane');
+Route::post('/candidature-spontane', [candidatureSController::class, 'store'])->name('candidature-spontane.store');
+
+
+
 // Locale Route
 Route::get('locale/{lang}', [LocaleController::class, 'setLocale']);
 
 // Protected Routes (Requires Authentication)
 Route::middleware(['auth', 'verified'])->group(function () {
+    
     // Dashboard Route
     Route::get('/dashboard', function () {
-        if (!auth()->user()->isSuperAdmin()) {
-            return redirect('/')->with('error', 'Unauthorized access.');
+        $user = auth()->user();
+    
+        // If Super Admin, show all users
+        if ($user->isSuperAdmin()) {
+            $users = User::with('role')->orderBy('name')->paginate(6);
+            return view('dashboard.super-admin', compact('users'));
         }
-        $users = User::with('role')->orderBy('name')->paginate(6);
-        return view('dashboard.super-admin', compact('users'));
+    
+        // If Admin, show their own dashboard without users
+        if ($user->isAdmin()) {
+            return view('dashboard.admin'); 
+        }
+    
+        return redirect('/')->with('error', 'Unauthorized access.');
     })->name('dashboard');
-
+    
+    
     // User Management Routes
     Route::get('/candidature-users', [CandidatureUserController::class, 'index'])->name('candidature-users.index');
     Route::get('/postule-users', [PostuleUserController::class, 'index'])->name('postule-users.index');
@@ -75,6 +93,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware(['superadmin'])->group(function () {
         Route::patch('/users/{user}/role', [UserController::class, 'updateRole'])->name('users.update-role');
     });
+
+    
 
     // Profile Routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

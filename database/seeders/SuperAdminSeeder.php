@@ -18,11 +18,11 @@ class SuperAdminSeeder extends Seeder
         );
 
        
-        if (!User::where('email', 'superadmin@example.com')->exists()) {
+        if (!User::where('email', 'excelinterim25@gmail.com')->exists()) {
             User::create([
                 'name' => 'Super Admin',
-                'email' => 'superadmin@example.com',
-                'password' => Hash::make('password'),
+                'email' => 'excelinterim25@gmail.com',
+                'password' => Hash::make('excelinterim25@'),
                 'role_id' => $superAdminRole->id,
                 'email_verified_at' => now(),
                 'is_active' => true

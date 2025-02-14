@@ -1255,7 +1255,7 @@
                 </li>
                 <li><a href="{{ url('/nosoffers') }}"
                         class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">@lang("messages.Offres d'emploi")</a></li>
-                <li><a href="{{ url('/candidature') }}"
+                <li><a href="{{ url('/candidature-spontane') }}"
                         class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">@lang("messages.Candidature")</a>
                 </li>
                 {{-- <li><a href="{{ url('/contact') }}" class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">@lang("messages.Contact")</a></li> --}}

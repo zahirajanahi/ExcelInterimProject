@@ -52,7 +52,8 @@ class UserController extends Controller
             'is_active' => true
         ]);
     
-        return redirect()->route('dashboard')->with('success', 'Employee added successfully.');
+        return redirect()->route('dashboard')->with('success', 'Admin added successfully.');
     }
+    
     
 }

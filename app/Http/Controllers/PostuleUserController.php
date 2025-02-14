@@ -14,6 +14,7 @@ class PostuleUserController extends Controller
         return redirect('/')->with('error', 'Unauthorized access.');
     }
     
+    
     $applications = JobApplication::with(['jobOffer', 'user'])
         ->orderBy('created_at', 'desc')
         ->paginate(10);

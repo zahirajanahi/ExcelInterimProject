@@ -29,7 +29,7 @@
                 </ul>
             </li>
             <li><a href="{{ url('/offres-demploi') }}" class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">Offres d'emploi</a></li>
-            <li><a href="{{ url('/candidature') }}" class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">Candidature</a></li>
+            <li><a href="{{ url('//candidature-spontane') }}" class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">Candidature</a></li>
             {{-- <li><a href="{{ url('/contact') }}" class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">@lang("messages.Contact")</a></li> --}}
             @auth
             <div class="hidden sm:flex sm:items-center sm:ms-6">

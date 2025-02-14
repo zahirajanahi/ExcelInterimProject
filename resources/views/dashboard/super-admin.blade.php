@@ -26,13 +26,7 @@
  
 </head>
 <body>
-    
-</body>
-</html>
-
-
-
-
+     
 <div class="flex">
     <!-- Sidebar -->
     <aside class="w-64 bg-gray-800 text-white fixed top-0 left-0 h-full p-5">
@@ -185,7 +179,7 @@
                 </div>
             </div>
 
-            <div class="p-6 bg-white rounded-lg shadow-md">
+            <div class="p-6 bg-white rounded-lg ">
                 <h2 class="text-2xl font-bold mb-4">Add New Employee</h2>
                 
                 <form action="{{ route('employees.store') }}" method="POST">
@@ -222,7 +216,7 @@
             </div>
             
     
-           <h3 class="text-lg font-semibold p-6 ms-5">User Management</h3> 
+           <h3 class="text-2xl font-bold mb-4 ms-6">User Management</h3> 
             <div class="p-7">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
@@ -256,3 +250,9 @@
         </div>
     </div>
 </div>
+
+</body>
+</html>
+
+
+
