@@ -12,14 +12,19 @@ use Illuminate\Support\Facades\Mail;
 
 class JobOffersController extends Controller
 {
-    public function index()
-    {
-        $jobOffers = JobOffer::where('is_active', true)
-            ->orderBy('created_at', 'desc')
-            ->paginate(12);
+    public function index(Request $request)
+{
+    $query = JobOffer::where('is_active', true);
 
-        return view("Home.offersDemploi.offers-index", compact('jobOffers'));
+    if ($request->filled('title')) {
+        $query->where('title', 'like', '%' . $request->title . '%');
     }
+
+    $jobOffers = $query->orderBy('created_at', 'desc')->paginate(12);
+
+    return view("Home.offersDemploi.offers-index", compact('jobOffers'));
+}
+
 
     public function publicShow(JobOffer $jobOffer)
     {

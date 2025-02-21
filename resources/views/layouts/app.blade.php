@@ -28,7 +28,6 @@
     </head>
     <body >
         <div 
-            @include('layouts.navigation')
 
             <!-- Page Heading -->
             @isset($header)

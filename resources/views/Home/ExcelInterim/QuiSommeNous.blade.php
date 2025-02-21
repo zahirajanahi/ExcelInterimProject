@@ -10,8 +10,8 @@
     <!-- Background Image Section -->
     <div class="bg-fixed bg-cover bg-center h-[60vh]" style="background-image: url('{{ asset('storage/images/nv.jpg') }}')">
         <div class="h-full w-full flex items-center justify-center bg-black bg-opacity-50">
-            <h1 class="text-zinc-200 text-4xl font-bold">Qui somme nous ?<br> 
-                <span class="text-lg font-normal ms-10"> <a href="{{ url('/') }}" class="text-[#c01c2e] transition duration-500 font-bold">Home</a> // Qui somme nous ?</span>  
+            <h1 class="text-white text-4xl font-bold "> <span class="border-s-4 border-[#c01c2e] ps-3">Qui sommes nous ? </span> <br> 
+                <span class="text-lg font-normal ms-10"> <a href="{{ url('/') }}" class="text-zinc-200 transition duration-500 font-bold">Home</a> // Qui sommes nous ?</span>  
               </h1> 
         </div>
     </div>
@@ -21,20 +21,18 @@
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <!-- Text Content -->
             <div>
-                <h1 class="text-3xl font-bold mb-4 text-[#c01c2e]">Qui sommes nous ?                </h1>
+                <h1 class="text-3xl font-bold mb-4 text-[#c01c2e]">@lang("messages.Qui sommes-nous")    ?           </h1>
 
-                <p class="text-gray-800 leading-relaxed mb-1 pt-5 w-[100%]">
-                    Spécialisée dans le travail temporaire, EXCEL INTERIM met en œuvre un ensemble de compétences et de techniques de métiers en vue de mettre à la disposition de ses clients les qualifications adaptées aux missions souhaitées.
-                <p class="text-gray-800 leading-relaxed  w-[100%]">Notre politique est de fournir des services de qualité avec meilleurs résultats, et de donner rentablement satisfaction à nos clients en s’adaptant à leurs besoins.  </p>
-                <p class="text-gray-800 leading-relaxed  w-[100%] pt-5">Notre stratégie d’entreprise est totalement tournée vers la qualité : </p>
+                <p class="text-gray-800 leading-relaxed mb-1 pt-5 w-[100%]">@lang("messages.Spécialisée dans le travail temporaire, EXCEL INTERIM met en œuvre un ensemble de compétences et de techniques de métiers en vue de mettre à la disposition de ses clients les qualifications adaptées aux missions souhaitées.")</p>
+                <p class="text-gray-800 leading-relaxed  w-[100%]">@lang("messages.Notre politique est de fournir des services de qualité avec meilleurs résultats, et de donner rentablement satisfaction à nos clients en s’adaptant à leurs besoins.") </p>
+                <p class="text-gray-800 leading-relaxed  w-[100%] pt-5">@lang("messages.Notre stratégie d’entreprise est totalement tournée vers la qualité :") </p>
                 <div class="pt-2">
-                    <div class="flex space-x-1 ms-10  text-gray-800 "><i class="bi bi-check2-circle font-bold text-bl"></i> <p>Les processus mis en œuvre pour les différentes missions d’intérim, sont efficaces.</p></div>
-                    <div class="flex space-x-1 ms-10 text-gray-800 "><i class="bi bi-check2-circle"></i> <p> La réponse complète aux besoins de nos clients est notre préoccupation, permettant de les fidéliser et de développer le marché.</p></div>
-                    <div class="flex space-x-1 text-gray-800 pt-4 "><p>Notre politique est communiquée : </p></div>
-                    <div class="flex space-x-1  text-gray-800 pt-2 ms-10"><i class="bi bi-check2-circle"></i> <p>Les processus mis en œuvre pour les différentes missions d’intérim, sont efficaces.</p></div>
-                    <div class="flex space-x-1  text-gray-800  ms-10"><i class="bi bi-check2-circle"></i> <p>Les personnels sont formés,</p></div>
-                    <div class="flex space-x-1  text-gray-800 ms-10"><i class="bi bi-check2-circle"></i> <p> Notre comité exécutif pilote la Qualité,</p></div>
-                    <div class="flex space-x-1  text-gray-800 ms-10"><i class="bi bi-check2-circle"></i> <p>Notre environnement de travail et nos outils sont efficaces,</p></div>
+                    <div class="flex space-x-1 ms-10  text-gray-800 "><i class="bi bi-check2-circle font-bold text-bl"></i> <p>@lang("messages.Les processus mis en œuvre pour les différentes missions d’intérim, sont efficaces.")</p></div>
+                    <div class="flex space-x-1 ms-10 text-gray-800 "><i class="bi bi-check2-circle"></i> <p>@lang("messages.La réponse complète aux besoins de nos clients est notre préoccupation, permettant de les fidéliser et de développer le marché.")</p></div>
+                    <div class="flex space-x-1 text-gray-800 pt-4 "><p>@lang("messages.Notre Engagement envers la Formation et la Qualité")</p></div>
+                    <div class="flex space-x-1  text-gray-800  ms-10 pt-4"><i class="bi bi-check2-circle"></i> <p>@lang("messages.Les personnels sont formés,")</p></div>
+                    <div class="flex space-x-1  text-gray-800 ms-10"><i class="bi bi-check2-circle"></i> <p> @lang("messages.Notre comité exécutif pilote la Qualité,")</p></div>
+                    <div class="flex space-x-1  text-gray-800 ms-10"><i class="bi bi-check2-circle"></i> <p>@lang("messages.Notre politique est communiquée :")</p></div>
 
                 </div>
             </p>
@@ -42,7 +40,7 @@
 
             <!-- Image Content -->
             <div>
-                <img src="{{ asset('storage/images/pixelcut-export (5).jpeg') }} " alt="HR Services" class="rounded-lg shadow-md h-[85vh] object-cover">
+                <img src="{{ asset('storage/images/pixelcut-export (5).jpeg') }} " alt="HR Services" class="rounded-lg shadow-md h-[85vh]  object-cover">
             </div>
         </div>
     </section>
@@ -70,6 +68,7 @@
             </video>
         </div>
     </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
         const openModal = document.getElementById("openModal");
@@ -118,7 +117,6 @@
         });
     });
 </script>
-
 
 
 @endsection

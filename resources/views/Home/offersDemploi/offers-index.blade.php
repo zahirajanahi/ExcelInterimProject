@@ -6,28 +6,19 @@
     
 
 
-    <div class="flex flex-col items-center text-center py-16 px-4 mt-24">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
-            Trouvez 
-            <span class="border-b-4 border-red-800 px-2 pb-1"> l'emploi de vos rêves</span> 
-            in <span class="text-gray-800"> à Excel Interim</span>
+
+<div class="bg-fixed bg-cover bg-center h-[60vh]" style="background-image: url('{{ asset('storage/images/') }}')">
+    <div class="h-full w-full flex items-center justify-center bg-black bg-opacity-50">
+        <h1 class="ms-4 border-s-4 border-red-800 ps-2 md:hidden block font-bold text-zinc-100">Trouver l'emploi de vos rêves à Excel <br> Interim </h1>
+        <h1 class="text-4xl md:text-3xl font-bold text-white hidden md:block">
+           <span class="ms-6 border-s-4 border-red-800 ps-2 "> @lang("messages.Trouvez")
+            <span class="px-2 pb-1 mb-10"> @lang("messages.l'emploi") </span> 
+            @lang("messages.de vos rêves") <span >@lang("messages.à Excel Interim")</span> </span><br>
+             <span class="text-lg  font-light text-center ms-10">@lang("messages.Trouvez l'emploi qui vous correspond parmi des centaines d'offres. Postulez en quelques clics") <br> <span class="ms-48">@lang("messages.et donnez un nouvel élan à votre carrière")</span>  </span>
         </h1>
-        <p class="text-gray-600 text-lg mt-5 max-w-xl">
-            When you're searching for a job, there are a few things you can do 
-            to get the most out of your search.
-        </p>
-        
-      
-        <div class="mt-6 w-full max-w-2xl relative">
-            <input type="text" placeholder="Job title or keyword" 
-                class="w-full py-3 pl-12 pr-4 text-gray-800 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" 
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1011 3a7.5 7.5 0 005.65 12.65z"/>
-            </svg>
-        </div>
     </div>
+</div>
+
     
 
 

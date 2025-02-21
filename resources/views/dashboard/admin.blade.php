@@ -33,9 +33,9 @@
                 <ul>
                     <li class="mb-4"><a href="{{ url('/') }}" class="block p-2 rounded hover:bg-gray-700">Home</a></li>  
                     @if(Auth::user()->isAdmin()) 
-                    <li class="mb-4"><a href="{{ url("/add-offres-d'emploi") }}" class="block p-2 rounded hover:bg-gray-700">Offres d'emploi</a></li>
-                    <li class="mb-4"><a href="{{ url('/postule-users') }}" class="block p-2 rounded hover:bg-gray-700">Postule Users</a></li>
-                    <li class="mb-4"><a href="{{ url('/candidature-users') }}" class="block p-2 rounded hover:bg-gray-700">Candidature Users</a></li>
+                    <li class="mb-4"><a href="{{ url('/offersDemploi') }}" class="block p-2 rounded hover:bg-gray-700">Offres d'emploi</a><li>
+                    <li class="mb-4"><a href="{{ url('/postuleUsers') }}" class="block p-2 rounded hover:bg-gray-700">Postule Users</a></li>
+                    <li class="mb-4"><a href="{{ url('/candidatureUsers') }}" class="block p-2 rounded hover:bg-gray-700">Candidature Users</a></li>
                     @endif
     
     
@@ -153,8 +153,29 @@
                     </div>
                 </div>
             </nav>
-        </div>
 
+
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-4">Welcome, {{ Auth::user()->name }} </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold">Total Job Offers</h4>
+                        <p class="text-2xl">{{ \App\Models\JobOffer::count() }}</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold">Active Applications</h4>
+                        <p class="text-2xl">{{ \App\Models\JobApplication::where('status', 'pending')->count() }}</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold">Total Candidates</h4>
+                        <p class="text-2xl">
+                            {{ \App\Models\JobOffer::count() + \App\Models\JobApplication::where('status', 'pending')->count() }}
+                        </p>                    </div>
+                </div>
+            </div>
+        </div>
+       
+        
 
     </div>
 </body>

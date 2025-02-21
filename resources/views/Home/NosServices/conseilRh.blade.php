@@ -7,9 +7,9 @@
     
     
 
-    <div class="flex space-x-36 mt-32 items-center ">
+    <div class="flex md:space-x-36 mt-32 items-center ">
         {{-- right side --}}
-        <div class="ms-10 bg-zinc-400/10 py-6 rounded-2xl w-[20vw] h-[70vh] pt-14">
+        <div class="ms-10 bg-zinc-400/10 py-6 rounded-2xl w-[20vw] h-[70vh] pt-14 md:block hidden">
             <nav class="ms-10">
                 <h1 class="text-zinc-900 font-bold text-xl ">Nos Services</h1>
                 <ul class="nav flex-column space-y-10 mt-10">
@@ -46,12 +46,12 @@
         </div>
         {{-- left side --}}
         <div>
-            <div class="bg-fixed bg-cover bg-center h-[40vh] w-[60vw] object-cover rounded-2xl" style="background-image: url('{{ asset('storage/images/conseiilrh.jpg') }}')">
-                <div class="h-full w-full flex items-center justify-center bg-black bg-opacity-40 rounded-2xl">
+            <div class="bg-fixed bg-cover bg-center ms-5 md:ms-1 h-[40vh] md:w-[60vw] w-[88vw] object-cover rounded-2xl" style="background-image: url('{{ asset('storage/images/conseiilrh.jpg') }}')">
+                <div class="h-full w-full md:ps-1 ps-10 flex items-center justify-center bg-black bg-opacity-40 rounded-2xl">
                     <h1 class="text-white text-4xl font-bold">CONSEIL RH</h1>
                 </div>
             </div>
-            <p class="w-[60vw] text-gray-800 leading-relaxed pt-7">
+            <p class="md:w-[60vw] w-[80vw] ms-5 md:ms-2 text-gray-800 leading-relaxed pt-7">
                 Excel Interim est un cabinet de conseil en organisation dont la vocation est d’accompagner les entreprises dans leur transformation.
                 Notre expérience dans de nombreux contextes de transformation a permis de nous forger de solides convictions et d’affiner une méthodologie éprouvée que nous adaptons toujours à votre contexte.
                 L’outillage que nous vous proposons est orienté “capital humain” pour développer des soft skills en équipe ou individuellement.

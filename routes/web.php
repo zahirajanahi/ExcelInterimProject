@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AddOffresController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\candidatureSController;
 use App\Http\Controllers\CandidatureUserController;
 use App\Http\Controllers\HomeController;
@@ -60,6 +61,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return redirect('/')->with('error', 'Unauthorized access.');
     })->name('dashboard');
     
+
+    //admin Route
+    Route::get('/dshb',[AdminController::class , 'dshb'])->name('dshb');
+    Route::get('/offersDemploi', [AdminController::class, 'index'])->name('offers.index');
+    Route::get('/postuleUsers', [AdminController::class, 'postuleUsers'])->name('postule.index');
+    Route::get('/candidatureUsers', [AdminController::class, 'candidatureUsers'])->name('candidatureUsers.index');
+
     
     // User Management Routes
     Route::get('/candidature-users', [CandidatureUserController::class, 'index'])->name('candidature-users.index');
@@ -93,6 +101,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware(['superadmin'])->group(function () {
         Route::patch('/users/{user}/role', [UserController::class, 'updateRole'])->name('users.update-role');
     });
+
+    
+
 
     
 

@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Excel Interim</title>
+
+    <link rel="icon" type="image/png" href="{{ asset('storage/images/LOGO.png') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -1215,76 +1217,120 @@
 
 <body>
 
-    <nav id="navbar"
-        class="bg-white shadow-md fixed top-0 left-0 w-full z-50 animate-fade-in-down transition-all py-2">
+    <nav id="navbar" class="bg-white shadow-md fixed top-0 left-0 md:w-full w-[97vw] z-50 transition-all py-2">
         <div class="container mx-auto flex justify-between items-center p-1">
-            <!-- Logo -->
-            <a href="{{ url('/') }}" class="text-gray-800 text-2xl font-bold flex items-center space-x-1">
-                <img src="{{ asset('storage/images/image-removebg-preview (9).png') }}" class="w-[4vw]" alt="">
-                <span class="text-[#c01c2e] text-lg">Excel Interim</span>
-            </a>
-
-            <!-- Navigation Links -->
-            <ul class="flex space-x-6 items-center">
-                <li class="relative group z-50">
-                    <a href="{{ url('/') }}"
-                        class="dropdown-btn text-black font-semibold hover:text-[#c01c2e] hover:bg-zinc-300  transition duration-700 px-4 py-2 rounded-3xl">
-                        Excel Interim
-                    </a>
-                    <ul
-                        class="dropdown-menu absolute left-0 mt-4 w-[20vw] bg-white  shadow-lg rounded-md py-2 opacity-0 invisible transition-all ease-in-out duration-300 transform scale-95 group-hover:opacity-100 group-hover:visible group-hover:scale-100">
-                        <li><a href="{{ url('/mdd') }}" class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Mot du directeur")</a></li>
-                        <li><a href="{{ url('/qsn') }}" class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Qui sommes-nous")</a></li>
-                        <li><a href="{{ url('/nosvaleur') }}" class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Nos valeurs")</a></li>
-                    </ul>
-                </li>
-                <li class="relative group">
-                    <a href="{{ url('/travailT') }}"
-                        class="dropdown-btn text-gray-800 font-semibold hover:text-[#c01c2e] hover:bg-zinc-300 transition duration-700 px-4 py-2 rounded-3xl">
-                        @lang("messages.Nos services")
-                    </a>
-                    <ul
-                        class="dropdown-menu absolute left-0 mt-4 w-[20vw] bg-white shadow-lg rounded-md py-2 opacity-0 invisible transition-all ease-in-out duration-300 transform scale-95 group-hover:opacity-100 group-hover:visible group-hover:scale-100">
-                        <li><a href="{{ url('/travailT') }}"
-                                class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Travail temporaire")</a></li>
-                        <li><a href="{{ url('/interim') }}"
-                                class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Recrutement")</a></li>
-                        <li><a href="{{ url('/conseil') }}"
-                                class="block px-4 py-2 text-black hover:bg-gray-100">@lang("messages.Conseil RH")</a></li>
-                    </ul>
-                </li>
-                <li><a href="{{ url('/nosoffers') }}"
-                        class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">@lang("messages.Offres d'emploi")</a></li>
-                <li><a href="{{ url('/candidature-spontane') }}"
-                        class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">@lang("messages.Candidature")</a>
-                </li>
-                {{-- <li><a href="{{ url('/contact') }}" class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">@lang("messages.Contact")</a></li> --}}
-               
-                    
-               
+          <!-- Logo -->
+          <a href="/" class="text-gray-800 text-2xl font-bold flex items-center space-x-1">
+            <img src="{{ asset('storage/images/image-removebg-preview (9).png') }}" class="md:w-[4vw] w-[7vw]" alt="">
+            <span class="text-[#c01c2e] text-lg">Excel Interim</span>
+          </a>
+  
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="lg:hidden text-gray-800 hover:text-[#c01c2e] focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+            </svg>
+          </button>
+  
+          <!-- Navigation Links -->
+          <ul id="nav-links" class="hidden lg:flex space-x-6 items-center">
+            <li class="relative group z-50">
+              <a href="/" class="dropdown-btn text-black font-semibold hover:text-[#c01c2e] hover:bg-zinc-300 transition duration-700 px-4 py-2 rounded-3xl">
+                Excel Interim
+              </a>
+              <ul class="dropdown-menu absolute left-0 mt-4 w-[20vw] bg-white shadow-lg rounded-md py-2 opacity-0 invisible transition-all duration-300 transform scale-95 group-hover:opacity-100 group-hover:visible group-hover:scale-100">
+                <li><a href="/mdd" class="block px-4 py-2 text-black hover:bg-gray-100">Mot du directeur</a></li>
+                <li><a href="/qsn" class="block px-4 py-2 text-black hover:bg-gray-100">Qui sommes-nous</a></li>
+                <li><a href="/nosvaleur" class="block px-4 py-2 text-black hover:bg-gray-100">Nos valeurs</a></li>
+              </ul>
+            </li>
+            <li class="relative group">
+              <a href="/travailT" class="dropdown-btn text-gray-800 font-semibold hover:text-[#c01c2e] hover:bg-zinc-300 transition duration-700 px-4 py-2 rounded-3xl">
+                Nos services
+              </a>
+              <ul class="dropdown-menu absolute left-0 mt-4 w-[20vw] bg-white shadow-lg rounded-md py-2 opacity-0 invisible transition-all duration-300 transform scale-95 group-hover:opacity-100 group-hover:visible group-hover:scale-100">
+                <li><a href="/travailT" class="block px-4 py-2 text-black hover:bg-gray-100">Travail temporaire</a></li>
+                <li><a href="/interim" class="block px-4 py-2 text-black hover:bg-gray-100">Recrutement</a></li>
+                <li><a href="/conseil" class="block px-4 py-2 text-black hover:bg-gray-100">Conseil RH</a></li>
+              </ul>
+            </li>
+            <li><a href="/nosoffers" class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">Offres d'emploi</a></li>
+            <li><a href="/candidature-spontane" class="text-gray-800 font-semibold hover:bg-zinc-300 hover:text-[#c01c2e] transition duration-700 px-4 py-2 rounded-3xl">Candidature</a></li>
+          </ul>
+  
+          <!-- Language Toggle -->
+          <div class="relative hidden lg:block">
+            <button id="lang-toggle" class="dropdown-btn text-xl text-gray-800 font-bold px-4 py-2 flex items-center space-x-1">
+              <span><i class="bi bi-translate"></i></span>
+              <svg class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="lang-menu" class="dropdown-menu absolute right-0 mt-2 w-[8vw] bg-white shadow-lg rounded-md py-2 hidden">
+              <li><a href="/locale/en" class="block px-4 py-2 hover:bg-gray-100 text-gray-600">English</a></li>
+              <li><a href="/locale/fr" class="block px-4 py-2 hover:bg-gray-100 text-gray-600">Français</a></li>
             </ul>
-
-            <!-- Language Toggle with Dropdown -->
-            <div class="relative">
-                <button class="dropdown-btn text-xl text-gray-800  font-bold px-4 py-2 flex items-center space-x-1">
-                    <span id="selected-lang"><i class="bi bi-translate"></i></span>
-                    <svg class="w-4 h-4 transition-transform rotate-0" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <ul
-                    class="dropdown-menu absolute right-0 mt-2 w-[8vw] bg-white shadow-lg rounded-md py-2 opacity-0 invisible transition-all ease-in-out duration-300 transform scale-95">
-                    <li><a href="{{ url('locale/en') }}"
-                            class="block px-4 py-2 hover:bg-gray-100 text-gray-600">@lang('messages.Anglais')</a></li>
-                    <li><a href="{{ url('locale/fr') }}"
-                            class="block px-4 py-2 hover:bg-gray-100  text-gray-600">@lang("messages.Français")</a></li>
-                </ul>
-            </div>
+          </div>
         </div>
-    </nav>
+  
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white">
+          <ul class="px-4 py-2">
+            <li class="py-2">
+              <button class="mobile-dropdown-btn w-full text-left text-black font-semibold px-4 py-2">
+                Excel Interim
+                <svg class="w-4 h-4 inline-block ml-1 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <ul class="mobile-dropdown-menu hidden pl-4">
+                <li><a href="/mdd" class="block py-2">Mot du directeur</a></li>
+                <li><a href="/qsn" class="block py-2">Qui sommes-nous</a></li>
+                <li><a href="/nosvaleur" class="block py-2">Nos valeurs</a></li>
+              </ul>
+            </li>
+            <li class="py-2">
+              <button class="mobile-dropdown-btn w-full text-left text-black font-semibold px-4 py-2">
+                Nos services
+                <svg class="w-4 h-4 inline-block ml-1 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <ul class="mobile-dropdown-menu hidden pl-4">
+                <li><a href="/travailT" class="block py-2">Travail temporaire</a></li>
+                <li><a href="/interim" class="block py-2">Recrutement</a></li>
+                <li><a href="/conseil" class="block py-2">Conseil RH</a></li>
+              </ul>
+            </li>
+            <li><a href="/nosoffers" class="block py-2 px-4">Offres d'emploi</a></li>
+            <li><a href="/candidature-spontane" class="block py-2 px-4">Candidature</a></li>
+            <li class="py-2">
+              <button class="mobile-dropdown-btn w-full text-left text-black font-semibold px-4 py-2">
+                Language
+                <svg class="w-4 h-4 inline-block ml-1 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <ul class="mobile-dropdown-menu hidden pl-4">
+                <li><a href="/locale/en" class="block py-2">English</a></li>
+                <li><a href="/locale/fr" class="block py-2">Français</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
 
+
+
+
+
+
+
+
+
+
+      
 
     <div class="relative bg-black">
         <!-- Splide Carousel -->
@@ -1363,40 +1409,40 @@
     <section>
         <div class="flex center-items justify-center space-x-20 mt-20 ">
             <div class="pt-40 ">
-                <h1 class="text-4xl font-bold text-[#c01c2e] ">@lang("messages.Travail temporaire")</h1>
-                <p class="text-xl text-gray-800 pt-5 w-[40vw] ">@lang("messages.Nous avons développé au fil des années un savoir-faire et des solutions adaptées aux besoins de nos clients en Travail Temporaire.")</p>
-                <button
-                    class="text-blue-950 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">@lang("messages.Lire Plus")</button>
+                <h1 class="text-4xl font-bold text-[#c01c2e] md:ms-1 ms-14">@lang("messages.Travail temporaire")</h1>
+                <p class="text-xl text-gray-800 pt-5 w-[90vw] md:ms-1 ms-14  md:w-[40vw]  mb-10">@lang("messages.Nous avons développé au fil des années un savoir-faire et des solutions adaptées aux besoins de nos clients en Travail Temporaire")</p>
+                <a href="{{ url('/travailT') }}"
+                    class="text-blue-950  text-lg font-semibold md:ms-1 ms-14 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">@lang("messages.Lire Plus")</a>
             </div>
             <div>
                 <img src="{{ asset('storage/images/Your paragraph text (1).png') }}"
-                    class="w-[40vw] rounded-3xl h-[80vh] object-cover">
+                    class="w-[40vw] rounded-3xl h-[80vh] object-cover hidden md:block">
             </div>
         </div>
 
-        <div class="flex center-items justify-center space-x-20 mt-12">
+        <div class="flex center-items justify-center md:space-x-20 md:mt-12 ">
             <div>
                 <img src="{{ asset('storage/images/Your paragraph text (2).png') }}"
-                    class="w-[40vw] rounded-3xl h-[80vh] object-cover">
+                    class="w-[40vw] rounded-3xl h-[80vh] object-cover hidden md:block">
             </div>
             <div class="pt-36 ">
                 <h1 class="text-4xl font-bold text-[#c01c2e]">@lang("messages.RECRUTEMENT")</h1>
-                <p class="text-xl text-gray-800 pt-4 w-[40vw]">@lang("messages.Nous sommes conscients des enjeux forts du recrutement, et nous engageons notre expérience et nos outils éprouvés pour garantir la meilleure adéquation poste/profil dans les meilleurs délais.")</p>
-                <button
-                    class="text-blue-950 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">@lang("messages.Lire Plus")</button>
+                <p class="text-xl text-gray-800 pt-4 w-[90vw] md:ms-1   md:w-[40vw] mb-10">@lang("messages.Nous sommes conscients des enjeux forts du recrutement, et nous engageons notre expérience et nos outils éprouvés pour garantir la meilleure adéquation poste/profil dans les meilleurs délais.")</p>
+                <a href="{{ url('/interim') }}"
+                    class="text-blue-950 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">@lang("messages.Lire Plus")</a>
             </div>
         </div>
 
-        <div class="flex center-items justify-center space-x-20 mt-10">
+        <div class="flex center-items justify-center space-x-20 md:mt-10 ">
             <div class="pt-48 ">
-                <h1 class="text-4xl font-bold text-[#c01c2e]">@lang("messages.Conseil RH")</h1>
-                <p class="text-xl text-gray-800 pt-5 w-[40vw]">@lang("messages.Nous disposons d'une grande expérience dans le conseil et l’organisation des ressources humaines. Nos missions de conseil et d’accompagnement procurent une valeur ajoutée distincte à toutes nos entreprises partenaires.")</p>
-                <button
-                    class="text-blue-950 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">@lang("messages.Lire Plus")</button>
+                <h1 class="text-4xl font-bold text-[#c01c2e] md:ms-1 ms-14">@lang("messages.Conseil RH")</h1>
+                <p class="text-xl text-gray-800 pt-5 w-[90vw] md:ms-1 ms-14  md:w-[40vw] mb-10">@lang("messages.Nous disposons d'une grande expérience dans le conseil et l’organisation des ressources humaines. Nos missions de conseil et d’accompagnement procurent une valeur ajoutée distincte à toutes nos entreprises partenaires.")</p>
+                <a href="{{ url('/conseil') }}"
+                    class="text-blue-950 md:ms-1 ms-14 text-lg font-semibold mt-7 px-6 py-2 border-blue-950 transform transition-transform hover:scale-110 border rounded-full">@lang("messages.Lire Plus")</a>
             </div>
             <div>
                 <img src="{{ asset('storage/images/Your paragraph text.png') }}"
-                    class="w-[40vw] rounded-3xl h-[80vh] object-cover">
+                    class="w-[40vw] rounded-3xl h-[80vh] object-cover hidden md:block">
             </div>
         </div>
     </section>
@@ -1408,7 +1454,7 @@
 
     {{-- section services --}}
     <section class="splide ms-5 mt-32 " id="secteurs-carousel">
-        <h1 class="text-gray-800 border-l-4 border-[#c01c2e] ps-4 text-4xl font-bold ">@lang("messages.Nos Secteurs D'activité")</h1>
+        <h1 class="text-gray-800 border-l-4 border-[#c01c2e] ps-4 text-4xl  font-bold ">@lang("messages.Nos Secteurs D'activité")</h1>
         <div class="splide__track mt-10">
             <ul class="splide__list">
                 @php
@@ -1429,7 +1475,7 @@
                 @foreach ($secteurs as $secteur)
                     <li class="splide__slide ">
                         <img src="{{ asset($secteur['image']) }}" alt="{{ $secteur['name'] }}"
-                            class="w-[23vw] h-[45vh] object-cover rounded-xl">
+                            class="md:w-[23vw] md:h-[45vh] w-[81vw] h-[45vh] object-cover rounded-xl">
                         <h3 class="   border-blue-900 text-center font-medium ">{{ $secteur['name'] }}</h3>
                     </li>
                 @endforeach
@@ -1437,48 +1483,75 @@
         </div>
     </section>
 
-    <section class="bg-zinc-500/10 py-20 mt-14">
-        <h2 class="text-gray-800 border-l-4 border-[#c01c2e] ps-4 text-4xl font-bold ms-5 "> @lang("messages.Excel Interim en chiffres")
+    <section class="bg-zinc-500/10 py-20 mt-14"> 
+        <h2 class="text-gray-800 border-l-4 border-[#c01c2e] ps-4 text-4xl font-bold ms-5">
+            @lang("messages.Excel Interim en chiffres")
         </h2>
-
+    
         <div class="container mx-auto text-center">
-            <p class="pt-4 text-zinc-600 text-xl "> " @lang("messages.Notre philosophie, en se matérialisant à travers des services et des avantages concrets pour nos clients et nos ressources, est devenue une véritable force") "</p>
-            <div class="flex justify-center space-x-36 mt-10">
+            <p class="pt-4 text-zinc-600 text-xl">
+                @lang("messages.Notre philosophie, en se matérialisant à travers des services et des avantages concrets pour nos clients et nos ressources, est devenue une véritable force")
+            </p>
+    
+            <!-- Grid responsive -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:flex lg:justify-center lg:space-x-20 gap-10 mt-10">
+                
+                <!-- Clients -->
                 <div>
                     <div class="flex items-center space-x-3">
                         <i class="bi bi-people text-4xl text-zinc-800 bg-zinc-500/10 px-3 py-2 rounded-full"></i>
-                        <h3 class="text-4xl font-semibold text-zinc-800"><span class="counter"
-                                data-target="40">0</span>+</h3>
+                        <h3 class="text-4xl font-semibold text-zinc-800">
+                            <span class="counter" data-target="40">0</span>+
+                        </h3>
                     </div>
-                    <p class="text-lg text-gray-700 font-semibold pt-1 ">@lang("messages.Clients")</p>
+                    <p class="text-lg text-gray-700 font-semibold pt-1">
+                        @lang("messages.Clients")
+                    </p>
                 </div>
+    
+                <!-- Recrutement -->
                 <div>
                     <div class="flex items-center space-x-3">
                         <i class="bi bi-briefcase text-4xl text-zinc-800 bg-zinc-500/10 px-3 py-2 rounded-full"></i>
-                        <h3 class="text-4xl font-semibold text-zinc-800"><span class="counter"
-                                data-target="1440">0</span>+</h3>
+                        <h3 class="text-4xl font-semibold text-zinc-800">
+                            <span class="counter" data-target="1440">0</span>+
+                        </h3>
                     </div>
-                    <p class="text-lg text-gray-700 font-semibold  pt-1 ">@lang("messages.Recrutement")</p>
+                    <p class="text-lg text-gray-700 font-semibold pt-1">
+                        @lang("messages.Recrutement")
+                    </p>
                 </div>
+    
+                <!-- Collaborateurs -->
                 <div>
                     <div class="flex items-center space-x-3">
                         <i class="bi bi-person-add text-4xl text-zinc-800 bg-zinc-500/10 px-3 py-2 rounded-full"></i>
-                        <h3 class="text-4xl font-semibold text-zinc-800"><span class="counter"
-                                data-target="60">0</span>+</h3>
+                        <h3 class="text-4xl font-semibold text-zinc-800">
+                            <span class="counter" data-target="60">0</span>+
+                        </h3>
                     </div>
-                    <p class="text-lg text-gray-700 font-semibold  pt-1 ">@lang("messages.Collaborateurs")</p>
+                    <p class="text-lg text-gray-700 font-semibold pt-1">
+                        @lang("messages.Collaborateurs")
+                    </p>
                 </div>
+    
+                <!-- Embauchés -->
                 <div>
                     <div class="flex items-center space-x-3">
                         <i class="bi bi-award text-4xl text-zinc-800 bg-zinc-500/10 px-3 py-2 rounded-full"></i>
-                        <h3 class="text-4xl font-semibold text-zinc-800"><span class="counter"
-                                data-target="1600">0</span>+</h3>
+                        <h3 class="text-4xl font-semibold text-zinc-800">
+                            <span class="counter" data-target="1600">0</span>+
+                        </h3>
                     </div>
-                    <p class="text-lg text-gray-700 font-semibold  pt-1 ">@lang("messages.Eumbauchés")</p>
+                    <p class="text-lg text-gray-700 font-semibold pt-1">
+                        @lang("messages.Eumbauchés")
+                    </p>
                 </div>
+    
             </div>
         </div>
     </section>
+    
 
     {{-- video section --}}
     <div class="relative w-full h-[39vh] bg-fixed bg-cover bg-center"
@@ -1565,82 +1638,73 @@
     </section>
 
 
-    <footer class="bg-zinc-900 text-white py-8 mt-32 ">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 pt-10">
-            <!-- Social Media Links -->
-            <div>
-                <h4 class="text-lg  border-zinc-100 font-semibold pb-6 "><span>SOC</span>IAL LINKS </h4>
-                <ul>
-                    <li class="mb-2 flex items-center space-x-2">
-                        <i class="bi bi-linkedin text-[#c01c2e]"></i> <a href="#"
-                            class="hover:underline">LinkedIn</a>
-                    </li>
-                    <li class="mb-2 flex items-center space-x-2">
-                        <i class="bi bi-twitter text-[#c01c2e]"></i> <a href="#"
-                            class="hover:underline">Twitter</a>
-                    </li>
-                    <li class="mb-2 flex items-center space-x-2">
-                        <i class="bi bi-instagram text-[#c01c2e]"></i> <a href="#"
-                            class="hover:underline">Instagram</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Address Section -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4">ADRESSE</h4>
-                <p class="mb-2">
-                    <span class="block">N23 Lotissement Florida Centre</span>
-                    <span class="block">Park 2 1ère étage Arr. Aïn Chok</span>
-                    <span class="block">Sidi Maarouf, CASABLANCA</span>
-                </p>
-                <p class="mb-2 flex items-center space-x-2">
-                    <span class="font-semibold">&#9742;</span> <span>0522672077</span>
-                </p>
-                <p class="flex items-center space-x-2">
-                    <span class="font-semibold">&#9993;</span> <span><a href="mailto:marketing@excelinterim.com"
-                            class="hover:underline">marketing@excelinterim.com</a></span>
-                </p>
-            </div>
-
-            <!-- Links Section -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4">EXCEL INTERIM</h4>
-                <ul>
-                    <li class="mb-2 flex items-center space-x-2">
-                        <span class="text-[#c01c2e]">&#8226;</span> <a href="#" class="hover:underline">Mot du
-                            Directeur</a>
-                    </li>
-                    <li class="mb-2 flex items-center space-x-2">
-                        <span class="text-[#c01c2e]">&#8226;</span> <a href="#" class="hover:underline">Qui
-                            Sommes-Nous ?</a>
-                    </li>
-                    <li class="mb-2 flex items-center space-x-2">
-                        <span class="text-[#c01c2e]">&#8226;</span> <a href="#" class="hover:underline">Nos
-                            Valeurs</a>
-                    </li>
-                    <li class="mb-2 flex items-center space-x-2">
-                        <span class="text-[#c01c2e]">&#8226;</span> <a href="#" class="hover:underline">Guide
-                            de l'intérim</a>
-                    </li>
-                </ul>
-            </div>
+    <footer class="bg-[#18181b] text-white py-12 mt-16">
+        <div class=" w-[90vw] mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+         
+          <div class="mb-6 md:mb-0 text-center md:text-left">
+            <h2 class="text-2xl font-bold text-[#c01c2e]">EXCEL INTERIM</h2>
+            <p class="text-gray-400 mt-2 max-w-md">
+                N23 Lotissement Florida Centre
+                Park 2 1ère étage Arr. Aïn Chok
+                Sidi Maarouf, CASABLANCA
+            </p>
+          </div>
+  
+         
+          <div class="flex space-x-8 text-sm text-gray-400">
+          <a href="/" class="hover:text-[#c01c2e] transition">Excel Interim </a>
+           <a href="/shop" class="hover:text-[#c01c2e] transition">Nos services</a>
+           <a href="/faqs" class="hover:text-[#c01c2e] transition">Candidature</a>
+          </div>
+  
+          <div class="flex space-x-6 pt-5">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-[#c01c2e] transition">
+                <i class="bi bi-facebook"  ></i>
+          
+            </a>
+            <a href="https://www.instagram.com/kaws.maroc?igsh=M2VhNXV2cGt6MXJl" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-[#c01c2e] transition">
+                <i class="bi bi-instagram"  ></i>
+              
+            </a>
+            <button onClick={handleWhatsAppClick} href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-[#c01c2e] transition">
+                <i class="bi bi-linkedin" ></i>
+            </button>
+          </div>
         </div>
-
-        <div class="container mx-auto text-center mt-8 border-t border-gray-700 pt-4">
-            <p class="text-sm">&copy; EXCEL INTERIM 2024</p>
+  
+       
+        <div class="text-center text-gray-500 text-sm mt-10 border-zinc-600 border-t pt-8 w-[90vw] mx-auto">
+          <p>&copy; 2025 EXCEL INTERIM . All rights reserved.</p>
         </div>
-
-        <!-- Back to Top Button -->
-        <div class="fixed bottom-6 right-4">
-            <a href="#"
-                class="bg-blue-950 text-white px-5 py-4 rounded-full shadow-lg  transition duration-300"> <i
-                    class="bi bi-arrow-up"></i> </a>
-        </div>
-    </footer>
+      </footer> 
 
 
-
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".dropdown-btn").forEach(button => {
+                button.addEventListener("click", function (event) {
+                    event.stopPropagation(); 
+                    const dropdown = this.nextElementSibling;
+    
+                    document.querySelectorAll(".dropdown-menu").forEach(menu => {
+                        if (menu !== dropdown) {
+                            menu.classList.add("opacity-0", "invisible", "scale-95");
+                        }
+                    });
+    
+                    dropdown.classList.toggle("opacity-0");
+                    dropdown.classList.toggle("invisible");
+                    dropdown.classList.toggle("scale-95");
+                });
+            });
+    
+            document.addEventListener("click", function () {
+                document.querySelectorAll(".dropdown-menu").forEach(menu => {
+                    menu.classList.add("opacity-0", "invisible", "scale-95");
+                });
+            });
+        });
+    </script>
 
 
 
@@ -1735,6 +1799,54 @@
                 }
             }).mount();
         });
+
+
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+mobileMenuButton.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
+
+// Language toggle
+const langToggle = document.getElementById('lang-toggle');
+const langMenu = document.getElementById('lang-menu');
+
+langToggle?.addEventListener('click', () => {
+  langMenu.classList.toggle('hidden');
+  const arrow = langToggle.querySelector('svg');
+  arrow.classList.toggle('rotate-180');
+});
+
+// Mobile dropdowns
+const mobileDropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+
+mobileDropdownBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const menu = btn.nextElementSibling;
+    const arrow = btn.querySelector('svg');
+    menu.classList.toggle('hidden');
+    arrow.classList.toggle('rotate-180');
+  });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  // Close language menu
+  if (!langToggle?.contains(e.target)) {
+    langMenu?.classList.add('hidden');
+    const arrow = langToggle?.querySelector('svg');
+    arrow?.classList.remove('rotate-180');
+  }
+});
+
+// Handle window resize
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1024) { // lg breakpoint
+    mobileMenu.classList.add('hidden');
+  }
+});
     </script>
     {{-- <script>
                         document.addEventListener("DOMContentLoaded", function () {

@@ -9,16 +9,16 @@
        <!-- Background Image Section -->
      <div class="bg-fixed bg-cover bg-center bg-fixed h-[60vh]" style="background-image: url('{{ asset('storage/images/qsn.png') }}')">
         <div class="h-full w-full flex items-center justify-center bg-black bg-opacity-50">
-            <h1 class="text-white text-4xl font-bold">Nos Valeur <br> 
-                <span class="text-lg font-normal ms-7"> <a href="{{ url('/') }}" class="hover:text-[#c01c2e] transition duration-500">Home</a> // Nos Valeur</span>  
-              </h1> 
+            <h1 class="text-white text-4xl font-bold "> <span class="border-s-4 border-[#c01c2e] ps-3">Nos Valeurs</span> <br> 
+                <span class="text-lg font-normal "> <a href="{{ url('/') }}" class="text-zinc-200 transition duration-500 font-bold">Home</a> // Qui sommes nous ?</span>  
+              </h1>  
         </div>
     </div>
 
     <!-- Cards Section -->
     <div class="container mx-auto my-12 px-6">
         <h1></h1>
-        <p class="text-gray-700 font-semibold mb-10 text-center text-lg border-s-4 ps-3 h-[10vh] pt-2 border-s-[#c01c2e]">Le RESPECT DE LA LEGISLATION, Le RESPECT DE LA PERSONNE, QUALITE DE SERVICE, L’ACCOMPAGNEMENT, LA REACTIVITE et la PROXIMITE sont nos valeurs communes. Elles nous permettent d’être un véritable partenaire de confiance pour nos clients.</p>
+        <p class="text-gray-700 font-semibold mb-10 text-center text-lg border-s-4 ps-3 h-[10vh] pt-2 border-s-[#c01c2e]">@lang("messages.Le RESPECT DE LA LEGISLATION, Le RESPECT DE LA PERSONNE, QUALITE DE SERVICE, L’ACCOMPAGNEMENT, LA REACTIVITE et la PROXIMITE sont nos valeurs communes. Elles nous permettent d’être un véritable partenaire de confiance pour nos clients.")</p>
         <div class="flex flex-wrap justify-center gap-6">
             @foreach ([
                 ['id' => '01', 'title' => 'EXPERTISE', 'description' => 'Nous mettons à profit notre expertise pour offrir des solutions adaptées et performantes. Grâce à une maîtrise approfondie de nos métiers, nous garantissons un service de qualité et une approche rigoureuse dans toutes nos interventions.', 'image' => 'exp.webp'],
@@ -28,10 +28,10 @@
                 ['id' => '05', 'title' => 'RESPECT', 'description' => 'Nous plaçons le respect au cœur de nos relations, en valorisant chaque individu et en favorisant un environnement bienveillant. L’écoute, l’équité et la reconnaissance des différences sont essentielles pour bâtir des collaborations solides.', 'image' => 'resp.jpg'],
                 ['id' => '06', 'title' => 'ENGAGEMENT', 'description' => 'Nous sommes engagés à fournir un service de qualité...Nous nous engageons à fournir un service de qualité basé sur la rigueur et la responsabilité. Notre implication se traduit par une approche proactive et une volonté constante d’atteindre l’excellence dans nos missions.', 'image' => 'eng.jpg']
             ] as $value)
-                <div class="w-full relative  sm:w-[48%] md:w-[30%] lg:w-[30%] xl:w-[30%] bg-white shadow-lg rounded-lg p-6 text-center">
+                <div class="w-full relative   md:w-[30%]  bg-white shadow-lg rounded-lg p-6 text-center">
                     <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-bold">{{ $value['id'] }}</span>
-                    <div class="relative overflow-hidden w-[24vw] h-[40vh]">
-                        <img src="{{ asset('storage/images/' . $value['image']) }}" alt="{{ $value['title'] }}" class="h-[100%] w-[100%] object-cover hover:scale-110 duration-500  mt-4 rounded-lg"></div>
+                    <div class="relative overflow-hidden md:w-[24vw] w-[76vw] h-[40vh]">
+                        <img src="{{ asset('storage/images/' . $value['image']) }}" alt="{{ $value['title'] }}" class="h-[100%] w-[100%]   object-cover hover:scale-110 duration-500  mt-4 rounded-lg"></div>
                     <h2 class="text-xl font-bold text-gray-800 mt-4">{{ $value['title'] }}</h2>
                     <p class="text-gray-600 mt-2">{{ $value['description'] }}</p>
                 </div>
